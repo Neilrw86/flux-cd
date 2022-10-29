@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  labels:
+    kustomize.toolkit.fluxcd.io/name: loki-stack
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  name: grafana-charts
+  namespace: monitoring
+spec:
+  interval: 120m0s
+  provider: generic
+  timeout: 60s
+  url: https://grafana.github.io/helm-charts
